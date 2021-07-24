@@ -1,0 +1,61 @@
+<p>Customer Form</p>
+
+<form ngForm>
+
+  <div class="form-group">
+    <label for="id">Id</label>
+    <input type="number" class="form-control" id="id"
+           required
+           [(ngModel)]="customer.id" name="id">
+  </div>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name"
+             required
+             [(ngModel)]="customer.name" name="name">
+    </div>
+    
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input type="number"  class="form-control" id="age"
+             [(ngModel)]="customer.age" name="age">
+    </div>
+    
+    <div class="form-group">
+      <label for="location">Location</label>
+      <input type="text"  class="form-control" id="location"
+             [(ngModel)]="customer.location" name="location">
+    </div>
+
+    <div class="form-group">
+      <label for="pincode">Pincode</label>
+      <input type="number"  class="form-control" id="pincode"
+             [(ngModel)]="customer.pincode" name="pincode">
+    </div>
+    
+      <button id = "submit" type="button" class="btn btn-primary" (click)="createCustomer(customer.id)">Submit</button>
+      <button id = "reset" type="button" class="btn btn-primary" (click)="reset()">Clear</button>
+      <div>
+        <button type="button" class="btn btn-primary" (click)="getUser()">List Customers</button>
+    
+      </div>
+    </form>
+<div><p>{{message}}</p></div>
+    
+
+    <p>List of Customers: </p>
+   
+    <div>
+        <ol>
+            <li appHighlight color = 'greenyellow' *ngFor='let cust of getData'>
+            {{cust.id }} <b>||</b> {{cust.firstName}} <b>||</b>{{cust.lastName}} <b> || </b> {{cust.email}} <b> || </b> {{cust.mobile}}<b> || </b> {{cust.dateOfBirth}}
+            <button id = "delete" type="button" class="btn btn-primary" (click)="deleteCustomer(cust.id)">Delete</button>
+            <button id = "update" type="button" class="btn btn-primary" (click)="updateCustomer(cust.id)">Update</button>
+             </li>
+         </ol>
+  
+      </div>
+
+      
+
+     

@@ -12,7 +12,7 @@ export class CustomerServiceService {
 
    getUserDetails() {
     return this.http.get('http://localhost:8082/customers');         
-  }
+  } 
 
    //Get implementation
    getCustomerDetails() {
